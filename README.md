@@ -1,5 +1,4 @@
-# Dutch & Dutch 8C
-# Node-RED Integration
+# Dutch & Dutch 8C - Node-RED Integration
 
 This package connects to Dutch & Dutch 8C speakers via an asynchronous WebSocket connection, allowing you to get and set Volume, Mute, and Sleep settings.
 
