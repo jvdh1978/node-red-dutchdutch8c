@@ -8,7 +8,7 @@ It will discover the speakers on the local network, identify the master speaker,
 
 Developed and tested on Speaker Firmware version 2.4.
 
-If you are using something other then node-red, the DD8C_client.js file can be used independently from node-red in your own javascript project.
+If you are using something other then node-red, the DD8C_client.js file can be used independently from node-red in your own javascript project. For a python project connecting to the speakers see: https://github.com/trevorwarwick/dutch-and-dutch (which i used to determine roomID code automatically).
 
 ## Installation
 
