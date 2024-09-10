@@ -1,6 +1,7 @@
 const WebSocket = require('ws');
 const EventEmitter = require('events');
 const { log } = require('console');
+const { type } = require('os');
 
 
 // before launch via terminal run: export DEBUG=true
@@ -314,6 +315,14 @@ class DD8C_client extends EventEmitter {
             logDebug('Not connected');
             return;
         };
+        if (typeof(volume)!== 'number') {
+            logDebug('volume is not a number');
+            return;
+        };
+        if (volume < -60 || volume > 6) {
+            logDebug('volume is out of range');
+            volume = Math.min(6, Math.max(-60, volume));
+        }
         this.ws.send(JSON.stringify(
             {
                 "meta":{
@@ -334,6 +343,10 @@ class DD8C_client extends EventEmitter {
             logDebug('Not connected');
             return;
         };
+        if (typeof(mute)!== 'boolean') {
+            logDebug(typeof(mute) + ' is not a boolean');
+            return;
+        };
         this.ws.send(JSON.stringify(
             {
                 "meta":{
@@ -343,16 +356,21 @@ class DD8C_client extends EventEmitter {
                     "target":this.targetID,
                     "targetType":"room"
                 },
-                "data":{
+                "data":[{
                     "mute":mute,
                     "positionID":"global"
-                }
+                }]
             }
         ));
     }
-    setSleep(sleep) {
+    setSleep(sleep) 
+    {
         if (this.connectionStatus === 'disconnected') {
             logDebug('Not connected');
+            return;
+        };
+        if (typeof(sleep)!== 'boolean') {
+            logDebug('sleep is not a boolean');
             return;
         };
         this.ws.send(JSON.stringify(
@@ -364,9 +382,9 @@ class DD8C_client extends EventEmitter {
                     "target":this.targetID,
                     "targetType":"room"
                 },
-                "data":{
+                "data":[{
                     "enable":sleep
-                }
+                }]
             }
         ));
     }
