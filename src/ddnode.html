@@ -1,0 +1,116 @@
+
+<!-- Gain -->
+
+<script type="text/javascript">
+  RED.nodes.registerType("gain", {
+    category: 'Dutch and Dutch 8C',
+    color: 'orange',
+    defaults: {
+      name: { value: "" },
+      server : { value: "", type: "speaker-server", required: true }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "font-awesome/fa-volume-up",
+    label: function () {
+      return this.name || "Gain (AES)";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="gain">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Master Speaker</label>
+      <input type="" id="node-input-server" placeholder="Server">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="gain">
+  <p>A simple node to set the volume level</p>
+</script>
+
+<!-- Mute -->
+<script type="text/javascript">
+  RED.nodes.registerType("mute", {
+    category: 'Dutch and Dutch 8C',
+    color: 'orange',
+    defaults: {
+      name: { value: "" },
+      server : { value: "", type: "speaker-server", required: true }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "font-awesome/fa-volume-off",
+    label: function () {
+      return this.name || "mute";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="mute">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Master Speaker</label>
+      <input type="" id="node-input-server" placeholder="Server">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="mute">
+  <p>A simple node to set the volume level</p>
+</script>
+
+<!-- Sleep -->
+
+<script type="text/javascript">
+  RED.nodes.registerType("sleep", {
+    category: 'Dutch and Dutch 8C',
+    color: 'orange',
+    defaults: {
+      name: { value: "" },
+      server : { value: "", type: "speaker-server", required: true }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "font-awesome/fa-power-off",
+    label: function () {
+      return this.name || "sleep";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="sleep">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Master Speaker</label>
+      <input type="" id="node-input-server" placeholder="Server">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="sleep">
+  <p>A simple node to set the volume level</p>
+</script>
+
+<!-- Speaker Connection -->
+
+<script type="text/javascript">
+  RED.nodes.registerType('speaker-server',{
+      category: 'config',
+      defaults: {
+          host: {value:"",required:true},
+      },
+      label: function() {
+          return "Speaker Server";
+      }
+  });
+</script>
+
+<script type="text/html" data-template-name="speaker-server">
+  <div class="form-row">
+      <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Host ("auto" to detect automatically) </label>
+      <input type="text" id="node-config-input-host">
+  </div>
+</script>

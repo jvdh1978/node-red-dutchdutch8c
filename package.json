@@ -1,0 +1,25 @@
+{
+  "name": "@jvdh/node-red-dutchdutch8c",
+  "version": "1.01",
+  "description": "An interface Node to operate Dutch & Dutch 8C speakers",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jan van der Horst",
+  "license": "GPL-3.0",
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "ddnode": "src/ddnode.js"
+    }
+  },
+  "files": [
+    "src/ddnode.html",
+    "src/ddnode.js",
+    "src/DD8C_client.js"
+  ],
+  "dependencies": {
+    "events": "^3.3.0",
+    "ws": "^8.18.0"
+  }
+}

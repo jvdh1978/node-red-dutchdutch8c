@@ -1,0 +1,205 @@
+[
+    {
+        "id": "8e14dc04a92fa449",
+        "type": "tab",
+        "label": "Example DD8C",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "45dea41a7c37315b",
+        "type": "gain",
+        "z": "8e14dc04a92fa449",
+        "name": "",
+        "server": "20af10cbc6d541b1",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "67e0083873079321"
+            ]
+        ]
+    },
+    {
+        "id": "8827a544a675d802",
+        "type": "mute",
+        "z": "8e14dc04a92fa449",
+        "name": "",
+        "server": "20af10cbc6d541b1",
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "a8b3c3c86892a176"
+            ]
+        ]
+    },
+    {
+        "id": "fd4f2d00729643f3",
+        "type": "sleep",
+        "z": "8e14dc04a92fa449",
+        "name": "",
+        "server": "20af10cbc6d541b1",
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "d9408bb1a59589ac"
+            ]
+        ]
+    },
+    {
+        "id": "67e0083873079321",
+        "type": "debug",
+        "z": "8e14dc04a92fa449",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 720,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a8b3c3c86892a176",
+        "type": "debug",
+        "z": "8e14dc04a92fa449",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 720,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d9408bb1a59589ac",
+        "type": "debug",
+        "z": "8e14dc04a92fa449",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 720,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e2c7cd4c0b611fec",
+        "type": "comment",
+        "z": "8e14dc04a92fa449",
+        "name": "Read and write to Dutch & Dutch 8C speakers",
+        "info": "",
+        "x": 450,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3089a7bf6b7f0d88",
+        "type": "inject",
+        "z": "8e14dc04a92fa449",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "-30",
+        "payloadType": "num",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "45dea41a7c37315b"
+            ]
+        ]
+    },
+    {
+        "id": "781f8b1b1c687eb2",
+        "type": "inject",
+        "z": "8e14dc04a92fa449",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "8827a544a675d802"
+            ]
+        ]
+    },
+    {
+        "id": "34957d5127e35aa2",
+        "type": "inject",
+        "z": "8e14dc04a92fa449",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "fd4f2d00729643f3"
+            ]
+        ]
+    },
+    {
+        "id": "20af10cbc6d541b1",
+        "type": "speaker-server",
+        "host": "auto"
+    }
+]
