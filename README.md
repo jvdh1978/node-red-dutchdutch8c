@@ -1,25 +1,38 @@
 # Dutch & Dutch 8C - node-red
+# Dutch & Dutch 8C Node-RED Integration
 
-This package connects to the Dutch & Dutch 8C speakers via an async websocket connection and allows getting and setting of Volume, Mute and Sleep.
+This package connects to Dutch & Dutch 8C speakers via an asynchronous WebSocket connection, allowing you to get and set Volume, Mute, and Sleep settings.
 
-It will find the speakers on the local network, determine the master speaker, retreive the targetID of the room and connect. It has not been designed to work with multiple sets of speakers in a single network. 
+It will discover the speakers on the local network, identify the master speaker, retrieve the targetID of the room, and connect. Note that this package is not designed to work with multiple sets of speakers on a single network.
 
-Developped and tested on Speaker Firmware version 2.4
+Developed and tested on Speaker Firmware version 2.4.
 
-after checkout:
-terminal in the folder:
+## Installation
 
+After checking out the repository, open a terminal in the project folder and run:
+
+```sh
 npm install
+```
 
-to manually install in node red:
-got to your home folder eg by:
+### Manual Installation in Node-RED
 
-cd 
+To manually install the package in Node-RED, navigate to your home directory:
 
-into the node-red folder:
+```sh
+cd
+```
 
+Then, go to the Node-RED folder:
+
+```sh
 cd .node-red
+```
 
-npm install \path\to\this\project
+Install the package:
 
-In node-red, make sure also make a speaker control server in a node and connect the other nodes to the same config node. 
+```sh
+npm install /path/to/this/project
+```
+
+In Node-RED, ensure you create a speaker control server node and connect the other nodes to the same configuration node.
