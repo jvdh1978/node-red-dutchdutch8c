@@ -2,6 +2,8 @@
 
 This package for node-red connects to Dutch & Dutch 8C speakers via an asynchronous WebSocket connection, allowing you to get and set Volume, Mute, and Sleep settings.
 
+![node-red screenshot](screenshot.png)
+
 It will discover the speakers on the local network, identify the master speaker, retrieve the targetID of the room, and connect. Note that this package is not designed to work with multiple sets of speakers on a single network.
 
 Developed and tested on Speaker Firmware version 2.4.
